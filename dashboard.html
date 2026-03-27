@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <!-- Favicon losange Ideon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpolygon points='32,4 60,32 32,60 4,32' fill='%237c3aed'/%3E%3C/svg%3E">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord — Ideon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">Ideon</span>
+            </a>
+            <button class="sidebar-close" id="sidebarClose">✕</button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <span class="nav-section-title">Principal</span>
+                <a href="dashboard.html" class="sidebar-link active" data-page="dashboard">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                    <span>Tableau de bord</span>
+                </a>
+                <a href="explore.html" class="sidebar-link" data-page="explore">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                    <span>Explorer les idées</span>
+                </a>
+                <a href="my-ideas.html" class="sidebar-link" data-page="my-ideas">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a7 7 0 0 1 7 7c0 3-2 5.5-4 7l-1 4H10l-1-4c-2-1.5-4-4-4-7a7 7 0 0 1 7-7z"/><path d="M10 20h4"/></svg>
+                    <span>Mes idées</span>
+                </a>
+                <a href="investors.html" class="sidebar-link" data-page="investors">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <span>Investisseurs</span>
+                </a>
+            </div>
+            <div class="nav-section">
+                <span class="nav-section-title">Communication</span>
+                <a href="messages.html" class="sidebar-link" data-page="messages">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    <span>Messages</span>
+                    <span class="badge">1</span>
+                </a>
+                <a href="notifications.html" class="sidebar-link" data-page="notifications">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    <span>Notifications</span>
+                    <span class="badge">3</span>
+                </a>
+            </div>
+            <div class="nav-section">
+                <span class="nav-section-title">Compte</span>
+                <a href="settings.html" class="sidebar-link" data-page="settings">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+                    <span>Paramètres</span>
+                </a>
+            </div>
+        </nav>
+
+        <div class="sidebar-profile">
+            <div class="profile-avatar" id="profileAvatar">JD</div>
+            <div class="profile-info">
+                <span class="profile-name" id="profileName">Jean Dupont</span>
+                <span class="profile-role">Innovateur</span>
+            </div>
+            <a href="index.html" class="profile-logout" title="Déconnexion">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Bar -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                </button>
+                <h1 class="page-title">Tableau de bord</h1>
+            </div>
+            <div class="topbar-right">
+                <div class="search-bar">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                    <input type="text" placeholder="Rechercher...">
+                </div>
+                <button class="topbar-btn notification-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    <span class="notif-dot"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <!-- Welcome -->
+            <div class="welcome-banner">
+                <div class="welcome-text">
+                    <h2>Bienvenue sur Ideon, <span id="welcomePseudo">Jean</span> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:inline;vertical-align:middle"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><path d="M6 1v3M10 1v3M14 1v3"/></svg></h2>
+                    <p>Commencez par publier votre première idée et attirez des investisseurs !</p>
+                </div>
+                <a href="my-ideas.html" class="btn-hero-primary btn-sm">
+                    <span>Publier une idée</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-card-icon purple">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a7 7 0 0 1 7 7c0 3-2 5.5-4 7l-1 4H10l-1-4c-2-1.5-4-4-4-7a7 7 0 0 1 7-7z"/></svg>
+                    </div>
+                    <div class="stat-card-info">
+                        <span class="stat-card-value">0</span>
+                        <span class="stat-card-label">Idées publiées</span>
+                    </div>
+                    <span class="stat-card-trend" style="color: var(--text-muted)">Publiez votre 1ère idée</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon cyan">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div class="stat-card-info">
+                        <span class="stat-card-value">0</span>
+                        <span class="stat-card-label">Investisseurs intéressés</span>
+                    </div>
+                    <span class="stat-card-trend" style="color: var(--text-muted)">—</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon green">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <div class="stat-card-info">
+                        <span class="stat-card-value">0€</span>
+                        <span class="stat-card-label">Offres totales reçues</span>
+                    </div>
+                    <span class="stat-card-trend" style="color: var(--text-muted)">—</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-icon orange">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <div class="stat-card-info">
+                        <span class="stat-card-value">0</span>
+                        <span class="stat-card-label">Vues sur mes pitchs</span>
+                    </div>
+                    <span class="stat-card-trend" style="color: var(--text-muted)">—</span>
+                </div>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="dashboard-grid">
+                <!-- Recent Proposals -->
+                <div class="dash-card proposals-card">
+                    <div class="dash-card-header">
+                        <h3>Dernières propositions d'investissement</h3>
+                        <a href="my-ideas.html" class="dash-card-link">Tout voir</a>
+                    </div>
+                    <div class="proposals-list">
+                        <div class="empty-state" style="text-align: center; padding: 32px 16px; color: var(--text-muted);">
+                            <div style="margin-bottom: 12px;"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="1.5"><path d="M22 12h-6l-2 3H10l-2-3H2"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></div>
+                            <p style="font-size: 0.9rem; margin-bottom: 4px; color: var(--text-secondary);">Aucune proposition pour le moment</p>
+                            <p style="font-size: 0.8rem;">Publiez une idée pour recevoir des offres d'investisseurs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- My Ideas Summary -->
+                <div class="dash-card ideas-summary-card">
+                    <div class="dash-card-header">
+                        <h3>Mes idées</h3>
+                        <a href="my-ideas.html" class="dash-card-link">Gérer</a>
+                    </div>
+                    <div class="ideas-summary-list">
+                        <div class="empty-state" style="text-align: center; padding: 32px 16px; color: var(--text-muted);">
+                            <div style="margin-bottom: 12px;"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="1.5"><path d="M12 2a7 7 0 0 1 7 7c0 3-2 5.5-4 7l-1 4H10l-1-4c-2-1.5-4-4-4-7a7 7 0 0 1 7-7z"/><path d="M10 20h4"/></svg></div>
+                            <p style="font-size: 0.9rem; margin-bottom: 4px; color: var(--text-secondary);">Vous n'avez pas encore d'idée</p>
+                            <p style="font-size: 0.8rem;">Créez votre première idée et partagez-la avec le monde</p>
+                        </div>
+                    </div>
+                    <a href="my-ideas.html#new" class="btn-new-idea">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        <span>Nouvelle idée</span>
+                    </a>
+                </div>
+
+                <!-- Activity Feed -->
+                <div class="dash-card activity-card">
+                    <div class="dash-card-header">
+                        <h3>Activité récente</h3>
+                    </div>
+                    <div class="activity-feed">
+                        <div class="activity-item">
+                            <div class="activity-dot green"></div>
+                            <div class="activity-text"><strong>Bienvenue !</strong> Votre compte Ideon a été créé avec succès</div>
+                            <div class="activity-time">à l'instant</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+        <script src="dashboard.js"></script>
+        <script>
+        // Remplace le pseudo par celui du localStorage si présent
+        (function() {
+            var pseudo = localStorage.getItem('pseudo');
+            if (pseudo) {
+                // Mettre la première lettre en majuscule pour l'accueil
+                var pseudoCap = pseudo.charAt(0).toUpperCase() + pseudo.slice(1);
+                var profileName = document.getElementById('profileName');
+                var welcomePseudo = document.getElementById('welcomePseudo');
+                if (profileName) profileName.textContent = pseudoCap;
+                if (welcomePseudo) welcomePseudo.textContent = pseudoCap;
+                // Avatar = initiales
+                var avatar = document.getElementById('profileAvatar');
+                if (avatar) {
+                    var parts = pseudo.split(/[._-]/);
+                    var initials = parts.length > 1 ? (parts[0][0] + parts[1][0]) : pseudo.slice(0,2);
+                    avatar.textContent = initials.toUpperCase();
+                }
+            }
+        })();
+        </script>
+</body>
+</html>

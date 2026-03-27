@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <!-- Favicon losange Ideon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpolygon points='32,4 60,32 32,60 4,32' fill='%237c3aed'/%3E%3C/svg%3E">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investisseurs — Ideon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="logo"><span class="logo-icon">◆</span><span class="logo-text">Ideon</span></a>
+            <button class="sidebar-close" id="sidebarClose">✕</button>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section"><span class="nav-section-title">Principal</span>
+                <a href="dashboard.html" class="sidebar-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Tableau de bord</span></a>
+                <a href="explore.html" class="sidebar-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><span>Explorer les idées</span></a>
+                <a href="my-ideas.html" class="sidebar-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a7 7 0 0 1 7 7c0 3-2 5.5-4 7l-1 4H10l-1-4c-2-1.5-4-4-4-7a7 7 0 0 1 7-7z"/><path d="M10 20h4"/></svg><span>Mes idées</span></a>
+                <a href="investors.html" class="sidebar-link active"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Investisseurs</span></a>
+            </div>
+            <div class="nav-section"><span class="nav-section-title">Communication</span>
+                <a href="messages.html" class="sidebar-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>Messages</span><span class="badge">1</span></a>
+                <a href="notifications.html" class="sidebar-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span>Notifications</span><span class="badge">3</span></a>
+            </div>
+            <div class="nav-section"><span class="nav-section-title">Compte</span>
+                <a href="settings.html" class="sidebar-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg><span>Paramètres</span></a>
+            </div>
+        </nav>
+        <div class="sidebar-profile">
+            <div class="profile-avatar" id="profileAvatar">JD</div>
+            <div class="profile-info"><span class="profile-name" id="profileName">Jean Dupont</span><span class="profile-role">Innovateur</span></div>
+            <a href="index.html" class="profile-logout" title="Déconnexion"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="sidebar-toggle" id="sidebarToggle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+                <h1 class="page-title">Investisseurs</h1>
+            </div>
+            <div class="topbar-right">
+                <div class="search-bar">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                    <input type="text" placeholder="Rechercher un investisseur...">
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-content">
+            <div class="explore-filters">
+                <div class="filter-tabs">
+                    <button class="filter-tab active">Tous</button>
+                    <button class="filter-tab">Intéressés par mes idées</button>
+                    <button class="filter-tab">Recommandés par l'IA</button>
+                    <button class="filter-tab">Top investisseurs</button>
+                </div>
+            </div>
+
+            <div class="investors-grid">
+                                <!-- 150 INVESTISSEURS FRANÇAIS OU NORMANDS GÉNÉRÉS -->
+                                <script>
+                                const frenchNames = [
+                                    "Camille Lefèvre","Julien Morel","Sophie Dubois","Lucas Bernard","Chloé Laurent","Thomas Petit","Emma Marchand","Louis Robert","Manon Garcia","Hugo Fontaine",
+                                    "Léa Rousseau","Arthur Lambert","Sarah Faure","Nicolas Girard","Pauline Chevalier","Antoine Gauthier","Julie Masson","Alexandre Caron","Claire Guerin","Maxime Lemoine",
+                                    "Elodie Pires","Benoît Blanchard","Marine Leclerc","Vincent Morin","Amandine Perrot","Baptiste Colin","Charlotte Roussel","Quentin Adam","Mélanie Chartier","Florian Dufour",
+                                    "Groupe Lemoine","Société Normande","Innovatech","Normandie Capital","Caen Invest","Rouen Finances","Cherbourg Ventures","Le Havre Angels","Lisieux Start","Fécamp Invest",
+                                    "Granville Développement","Vire Entreprises","Dieppe Croissance","Evreux Business","Saint-Lô Capital","Alençon Investissements","Honfleur Partners","Bayeux Invest","Pont-Audemer Group","Vernon Capital"
+                                ];
+                                const normandyCities = ["Caen","Rouen","Le Havre","Cherbourg","Évreux","Dieppe","Lisieux","Fécamp","Granville","Vire","Bayeux","Saint-Lô","Alençon","Honfleur","Pont-Audemer","Vernon"];
+                                const otherCities = ["Paris","Lyon","Marseille","Bordeaux","Nantes","Toulouse","Lille","Strasbourg","Nice","Montpellier","Grenoble","Rennes","Dijon","Tours","Orléans"];
+                                const allCities = normandyCities.concat(otherCities);
+                                for(let i=1;i<=150;i++){
+                                    const colors=[
+                                        ['#7c3aed','#06b6d4'],['#06b6d4','#10b981'],['#f59e0b','#ef4444'],['#ec4899','#8b5cf6'],['#10b981','#06b6d4'],['#7c3aed','#f59e0b'],['#f43f5e','#f59e42'],['#06b6d4','#f43f5e'],['#f59e0b','#10b981']
+                                    ];
+                                    const c=colors[i%colors.length];
+                                    const tags=["Green","Tech","IA","SaaS","Industrie","Santé","Fintech","Impact","Retail","MedTech","AgriTech","Robotique","Femmes","Europe","Afrique"];
+                                    // 70% de personnes physiques, 30% sociétés
+                                    let name;
+                                    if(i%10 < 7) {
+                                        name = frenchNames[i%30];
+                                    } else {
+                                        name = frenchNames[30 + (i%20)];
+                                    }
+                                    // 20% de villes normandes, 80% autres villes françaises
+                                    let city;
+                                    if(Math.random() < 0.2) {
+                                        city = normandyCities[Math.floor(Math.random()*normandyCities.length)];
+                                    } else {
+                                        city = otherCities[Math.floor(Math.random()*otherCities.length)];
+                                    }
+                                    const role = ["Business Angel","VC Partner","Family Office","Corporate VC"][i%4];
+                                    const avatar = name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2);
+                                    const tagList = Array.from({length:3},(_,k)=>tags[(i+k)%tags.length]).map(t=>`<span class='investor-tag'>${t}</span>`).join('');
+                                    document.write(`
+                                    <div class='investor-card'>
+                                            <div class='investor-header'>
+                                                    <div class='investor-avatar-lg' style='background:linear-gradient(135deg,${c[0]},${c[1]})'>${avatar}</div>
+                                                    <div class='investor-verified'>✓ Vérifié</div>
+                                            </div>
+                                            <h3 class='investor-name'>${name}</h3>
+                                            <p class='investor-title'>${role} · ${city}</p>
+                                            <div class='investor-tags'>${tagList}</div>
+                                            <div class='investor-stats-row'>
+                                                    <div class='investor-stat'><span class='inv-stat-val'>${Math.floor(Math.random()*60+5)}</span><span class='inv-stat-lbl'>Investissements</span></div>
+                                                    <div class='investor-stat'><span class='inv-stat-val'>${Math.floor(Math.random()*2000+100)}–${Math.floor(Math.random()*5000+200)}€</span><span class='inv-stat-lbl'>Ticket</span></div>
+                                            </div>
+                                            <div class='investor-actions'>
+                                                    <button class='btn-invest-sm'>Proposer mon idée</button>
+                                                    <button class='btn-contact-sm'>Message</button>
+                                            </div>
+                                    </div>
+                                    `);
+                                }
+                                </script>
+                                <!-- INVESTISSEURS SUPPLÉMENTAIRES -->
+                                <div class="investor-card">
+                                    <div class="investor-header">
+                                        <div class="investor-avatar-lg" style="background: linear-gradient(135deg, #f43f5e, #f59e42)">LM</div>
+                                        <div class="investor-verified">✓ Vérifié</div>
+                                    </div>
+                                    <h3 class="investor-name">Laura Martin</h3>
+                                    <p class="investor-title">Business Angel · Lyon</p>
+                                    <div class="investor-tags">
+                                        <span class="investor-tag">FoodTech</span>
+                                        <span class="investor-tag">Retail</span>
+                                        <span class="investor-tag">Femmes</span>
+                                    </div>
+                                    <div class="investor-stats-row">
+                                        <div class="investor-stat"><span class="inv-stat-val">19</span><span class="inv-stat-lbl">Investissements</span></div>
+                                        <div class="investor-stat"><span class="inv-stat-val">500–2000€</span><span class="inv-stat-lbl">Ticket</span></div>
+                                    </div>
+                                    <div class="investor-actions">
+                                        <button class="btn-invest-sm">Proposer mon idée</button>
+                                        <button class="btn-contact-sm">Message</button>
+                                    </div>
+                                </div>
+                                <div class="investor-card">
+                                    <div class="investor-header">
+                                        <div class="investor-avatar-lg" style="background: linear-gradient(135deg, #06b6d4, #f43f5e)">OS</div>
+                                        <div class="investor-verified">✓ Vérifié</div>
+                                    </div>
+                                    <h3 class="investor-name">Omar Sarr</h3>
+                                    <p class="investor-title">VC Partner · Dakar</p>
+                                    <div class="investor-tags">
+                                        <span class="investor-tag">AgriTech</span>
+                                        <span class="investor-tag">Afrique</span>
+                                        <span class="investor-tag">Impact</span>
+                                    </div>
+                                    <div class="investor-stats-row">
+                                        <div class="investor-stat"><span class="inv-stat-val">27</span><span class="inv-stat-lbl">Investissements</span></div>
+                                        <div class="investor-stat"><span class="inv-stat-val">800–2500€</span><span class="inv-stat-lbl">Ticket</span></div>
+                                    </div>
+                                    <div class="investor-actions">
+                                        <button class="btn-invest-sm">Proposer mon idée</button>
+                                        <button class="btn-contact-sm">Message</button>
+                                    </div>
+                                </div>
+                                <div class="investor-card">
+                                    <div class="investor-header">
+                                        <div class="investor-avatar-lg" style="background: linear-gradient(135deg, #f59e0b, #10b981)">SR</div>
+                                        <div class="investor-verified">✓ Vérifié</div>
+                                    </div>
+                                    <h3 class="investor-name">Sophie Renaud</h3>
+                                    <p class="investor-title">Family Office · Genève</p>
+                                    <div class="investor-tags">
+                                        <span class="investor-tag">Santé</span>
+                                        <span class="investor-tag">MedTech</span>
+                                        <span class="investor-tag">Europe</span>
+                                    </div>
+                                    <div class="investor-stats-row">
+                                        <div class="investor-stat"><span class="inv-stat-val">31</span><span class="inv-stat-lbl">Investissements</span></div>
+                                        <div class="investor-stat"><span class="inv-stat-val">1000–5000€</span><span class="inv-stat-lbl">Ticket</span></div>
+                                    </div>
+                                    <div class="investor-actions">
+                                        <button class="btn-invest-sm">Proposer mon idée</button>
+                                        <button class="btn-contact-sm">Message</button>
+                                    </div>
+                                </div>
+                <div class="investor-card">
+                    <div class="investor-header">
+                        <div class="investor-avatar-lg" style="background: linear-gradient(135deg, #7c3aed, #06b6d4)">PL</div>
+                        <div class="investor-verified">✓ Vérifié</div>
+                    </div>
+                    <h3 class="investor-name">Pierre Levasseur</h3>
+                    <p class="investor-title">Business Angel · Paris</p>
+                    <div class="investor-tags">
+                        <span class="investor-tag">Green</span>
+                        <span class="investor-tag">Logistique</span>
+                        <span class="investor-tag">SaaS</span>
+                    </div>
+                    <div class="investor-stats-row">
+                        <div class="investor-stat"><span class="inv-stat-val">23</span><span class="inv-stat-lbl">Investissements</span></div>
+                        <div class="investor-stat"><span class="inv-stat-val">50–300€</span><span class="inv-stat-lbl">Ticket</span></div>
+                    </div>
+                    <div class="investor-actions">
+                        <button class="btn-invest-sm">Proposer mon idée</button>
+                        <button class="btn-contact-sm">Message</button>
+                    </div>
+                </div>
+
+                <div class="investor-card featured-investor">
+                    <div class="investor-header">
+                        <div class="investor-avatar-lg" style="background: linear-gradient(135deg, #06b6d4, #10b981)">AC</div>
+                        <div class="investor-verified">✓ Vérifié</div>
+                    </div>
+                    <span class="ai-match"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:3px"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> 92% match IA</span>
+                    <h3 class="investor-name">Alice Chen</h3>
+                    <p class="investor-title">VC Partner · Singapour</p>
+                    <div class="investor-tags">
+                        <span class="investor-tag">Tech</span>
+                        <span class="investor-tag">IA</span>
+                        <span class="investor-tag">Deeptech</span>
+                    </div>
+                    <div class="investor-stats-row">
+                        <div class="investor-stat"><span class="inv-stat-val">56</span><span class="inv-stat-lbl">Investissements</span></div>
+                        <div class="investor-stat"><span class="inv-stat-val">1500–3000€</span><span class="inv-stat-lbl">Ticket</span></div>
+                    </div>
+                    <div class="investor-actions">
+                        <button class="btn-invest-sm">Proposer mon idée</button>
+                        <button class="btn-contact-sm">Message</button>
+                    </div>
+                </div>
+
+                <div class="investor-card">
+                    <div class="investor-header">
+                        <div class="investor-avatar-lg" style="background: linear-gradient(135deg, #f59e0b, #ef4444)">RS</div>
+                        <div class="investor-verified">✓ Vérifié</div>
+                    </div>
+                    <h3 class="investor-name">Robert Schmidt</h3>
+                    <p class="investor-title">Family Office · Munich</p>
+                    <div class="investor-tags">
+                        <span class="investor-tag">Green</span>
+                        <span class="investor-tag">Industrie</span>
+                        <span class="investor-tag">Mobilité</span>
+                    </div>
+                    <div class="investor-stats-row">
+                        <div class="investor-stat"><span class="inv-stat-val">12</span><span class="inv-stat-lbl">Investissements</span></div>
+                        <div class="investor-stat"><span class="inv-stat-val">1200–2500€</span><span class="inv-stat-lbl">Ticket</span></div>
+                    </div>
+                    <div class="investor-actions">
+                        <button class="btn-invest-sm">Proposer mon idée</button>
+                        <button class="btn-contact-sm">Message</button>
+                    </div>
+                </div>
+
+                <div class="investor-card">
+                    <div class="investor-header">
+                        <div class="investor-avatar-lg" style="background: linear-gradient(135deg, #ec4899, #8b5cf6)">MV</div>
+                        <div class="investor-verified">✓ Vérifié</div>
+                    </div>
+                    <span class="ai-match"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:3px"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> 85% match IA</span>
+                    <h3 class="investor-name">Marie Voisin</h3>
+                    <p class="investor-title">Business Angel · Bruxelles</p>
+                    <div class="investor-tags">
+                        <span class="investor-tag">Santé</span>
+                        <span class="investor-tag">Bien-être</span>
+                        <span class="investor-tag">Femtech</span>
+                    </div>
+                    <div class="investor-stats-row">
+                        <div class="investor-stat"><span class="inv-stat-val">8</span><span class="inv-stat-lbl">Investissements</span></div>
+                        <div class="investor-stat"><span class="inv-stat-val">100–600€</span><span class="inv-stat-lbl">Ticket</span></div>
+                    </div>
+                    <div class="investor-actions">
+                        <button class="btn-invest-sm">Proposer mon idée</button>
+                        <button class="btn-contact-sm">Message</button>
+                    </div>
+                </div>
+
+                <div class="investor-card">
+                    <div class="investor-header">
+                        <div class="investor-avatar-lg" style="background: linear-gradient(135deg, #10b981, #06b6d4)">YT</div>
+                        <div class="investor-verified">✓ Vérifié</div>
+                    </div>
+                    <h3 class="investor-name">Youssef Tahiri</h3>
+                    <p class="investor-title">VC Associate · Casablanca</p>
+                    <div class="investor-tags">
+                        <span class="investor-tag">Fintech</span>
+                        <span class="investor-tag">Afrique</span>
+                        <span class="investor-tag">Impact</span>
+                    </div>
+                    <div class="investor-stats-row">
+                        <div class="investor-stat"><span class="inv-stat-val">34</span><span class="inv-stat-lbl">Investissements</span></div>
+                        <div class="investor-stat"><span class="inv-stat-val">200–900€</span><span class="inv-stat-lbl">Ticket</span></div>
+                    </div>
+                    <div class="investor-actions">
+                        <button class="btn-invest-sm">Proposer mon idée</button>
+                        <button class="btn-contact-sm">Message</button>
+                    </div>
+                </div>
+
+                <div class="investor-card">
+                    <div class="investor-header">
+                        <div class="investor-avatar-lg" style="background: linear-gradient(135deg, #7c3aed, #f59e0b)">KN</div>
+                        <div class="investor-verified">✓ Vérifié</div>
+                    </div>
+                    <h3 class="investor-name">Keiko Nakamura</h3>
+                    <p class="investor-title">Corporate VC · Tokyo</p>
+                    <div class="investor-tags">
+                        <span class="investor-tag">EdTech</span>
+                        <span class="investor-tag">IA</span>
+                        <span class="investor-tag">Robotique</span>
+                    </div>
+                    <div class="investor-stats-row">
+                        <div class="investor-stat"><span class="inv-stat-val">41</span><span class="inv-stat-lbl">Investissements</span></div>
+                        <div class="investor-stat"><span class="inv-stat-val">1500–3000€</span><span class="inv-stat-lbl">Ticket</span></div>
+                    </div>
+                    <div class="investor-actions">
+                        <button class="btn-invest-sm">Proposer mon idée</button>
+                        <button class="btn-contact-sm">Message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+        <script src="dashboard.js"></script>
+        <script>
+        (function() {
+            var pseudo = localStorage.getItem('pseudo');
+            if (pseudo) {
+                var pseudoCap = pseudo.charAt(0).toUpperCase() + pseudo.slice(1);
+                var profileName = document.getElementById('profileName');
+                if (profileName) profileName.textContent = pseudoCap;
+                var avatar = document.getElementById('profileAvatar');
+                if (avatar) {
+                    var parts = pseudo.split(/[._-]/);
+                    var initials = parts.length > 1 ? (parts[0][0] + parts[1][0]) : pseudo.slice(0,2);
+                    avatar.textContent = initials.toUpperCase();
+                }
+            }
+        })();
+        </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <!-- Favicon losange Ideon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpolygon points='32,4 60,32 32,60 4,32' fill='%237c3aed'/%3E%3C/svg%3E">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages — Ideon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="logo"><span class="logo-icon">◆</span><span class="logo-text">Ideon</span></a>
+            <button class="sidebar-close" id="sidebarClose">✕</button>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section"><span class="nav-section-title">Principal</span>
+                <a href="dashboard.html" class="sidebar-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Tableau de bord</span></a>
+                <a href="explore.html" class="sidebar-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><span>Explorer les idées</span></a>
+                <a href="my-ideas.html" class="sidebar-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a7 7 0 0 1 7 7c0 3-2 5.5-4 7l-1 4H10l-1-4c-2-1.5-4-4-4-7a7 7 0 0 1 7-7z"/><path d="M10 20h4"/></svg><span>Mes idées</span></a>
+                <a href="investors.html" class="sidebar-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Investisseurs</span></a>
+            </div>
+            <div class="nav-section"><span class="nav-section-title">Communication</span>
+                <a href="messages.html" class="sidebar-link active"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>Messages</span><span class="badge">1</span></a>
+                <a href="notifications.html" class="sidebar-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span>Notifications</span><span class="badge">3</span></a>
+            </div>
+            <div class="nav-section"><span class="nav-section-title">Compte</span>
+                <a href="settings.html" class="sidebar-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg><span>Paramètres</span></a>
+            </div>
+        </nav>
+        <div class="sidebar-profile">
+            <div class="profile-avatar" id="profileAvatar">JD</div>
+            <div class="profile-info"><span class="profile-name" id="profileName">Jean Dupont</span><span class="profile-role">Innovateur</span></div>
+            <a href="index.html" class="profile-logout" title="Déconnexion"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="sidebar-toggle" id="sidebarToggle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+                <h1 class="page-title">Messages</h1>
+            </div>
+        </header>
+
+        <div class="messages-layout">
+            <!-- Conversations List -->
+            <div class="conversations-panel">
+                <div class="conversations-search">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                    <input type="text" placeholder="Rechercher une conversation...">
+                </div>
+                <div class="conversations-list">
+                    <div class="conversation-item active">
+                        <div class="conv-avatar" style="background: linear-gradient(135deg, #7c3aed, #06b6d4)">◆</div>
+                        <div class="conv-info">
+                            <div class="conv-top-row">
+                                <span class="conv-name">Équipe Ideon</span>
+                                <span class="conv-time">Maintenant</span>
+                            </div>
+                            <div class="conv-preview">Bienvenue sur Ideon ! Nous sommes ravis de...</div>
+                        </div>
+                        <span class="conv-unread">1</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Panel -->
+            <div class="chat-panel">
+                <div class="chat-header">
+                    <div class="chat-user">
+                        <div class="conv-avatar" style="background: linear-gradient(135deg, #7c3aed, #06b6d4)">◆</div>
+                        <div>
+                            <div class="chat-user-name">Équipe Ideon</div>
+                            <div class="chat-user-status"><svg width="8" height="8" viewBox="0 0 8 8" style="display:inline;vertical-align:middle;margin-right:4px"><circle cx="4" cy="4" r="4" fill="#10b981"/></svg> En ligne · Support</div>
+                        </div>
+                    </div>
+                    <div class="chat-actions-header">
+                        <span class="chat-project-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:3px"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><path d="M6 1v3M10 1v3M14 1v3"/></svg> Bienvenue</span>
+                    </div>
+                </div>
+
+                <div class="chat-messages" id="chatMessages">
+                    <div class="chat-date-divider"><span>Aujourd'hui</span></div>
+                    <div class="chat-message received">
+                        <div class="chat-bubble">
+                            <p>Bienvenue sur Ideon !</p>
+                            <span class="chat-time">À l'instant</span>
+                        </div>
+                    </div>
+                    <div class="chat-message received">
+                        <div class="chat-bubble">
+                            <p>Nous sommes ravis de vous accueillir. Ideon est la plateforme où vos idées rencontrent les bons investisseurs.</p>
+                            <span class="chat-time">À l'instant</span>
+                        </div>
+                    </div>
+                    <div class="chat-message received">
+                        <div class="chat-bubble">
+                            <p>Pour commencer, publiez votre première idée depuis la section <strong>Mes idées</strong>. Les investisseurs pourront ensuite vous contacter directement ici. Bonne aventure !</p>
+                            <span class="chat-time">À l'instant</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-area">
+                    <button class="chat-attach" title="Joindre un fichier">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+                    </button>
+                    <input type="text" class="chat-input" id="chatInput" placeholder="Tapez votre message...">
+                    <button class="chat-send" id="chatSend" title="Envoyer">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+        <script src="dashboard.js"></script>
+        <script>
+        (function() {
+            var pseudo = localStorage.getItem('pseudo');
+            if (pseudo) {
+                var pseudoCap = pseudo.charAt(0).toUpperCase() + pseudo.slice(1);
+                var profileName = document.getElementById('profileName');
+                if (profileName) profileName.textContent = pseudoCap;
+                var avatar = document.getElementById('profileAvatar');
+                if (avatar) {
+                    var parts = pseudo.split(/[._-]/);
+                    var initials = parts.length > 1 ? (parts[0][0] + parts[1][0]) : pseudo.slice(0,2);
+                    avatar.textContent = initials.toUpperCase();
+                }
+            }
+        })();
+        </script>
+</body>
+</html>

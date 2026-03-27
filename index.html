@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <!-- Favicon losange Ideon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpolygon points='32,4 60,32 32,60 4,32' fill='%237c3aed'/%3E%3C/svg%3E">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideon — Là où les idées rencontrent l'investissement</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cursor glow effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Floating particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">Ideon</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Fonctionnalités</a>
+                <a href="#how" class="nav-link">Comment ça marche</a>
+                <a href="#stats" class="nav-link">Impact</a>
+                <a href="#testimonials" class="nav-link">Témoignages</a>
+            </div>
+            <div class="nav-actions">
+                <a href="login.html" class="btn-ghost">Se connecter</a>
+                <a href="register.html" class="btn-primary">Commencer gratuitement</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+            <div class="grid-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge animate-in">
+                <span class="badge-dot"></span>
+                <span>La révolution de l'innovation est là</span>
+            </div>
+            <h1 class="hero-title animate-in">
+                <span class="title-line">Vos idées</span>
+                <span class="title-line">méritent</span>
+                <span class="title-line gradient-text">de devenir réalité</span>
+            </h1>
+            <p class="hero-subtitle animate-in">
+                Ideon connecte les visionnaires aux investisseurs. Présentez votre idée, 
+                trouvez le financement, et transformez vos rêves en entreprises qui changent le monde.
+            </p>
+            <div class="hero-cta animate-in">
+                <a href="register.html" class="btn-hero-primary">
+                    <span>Lancer mon idée</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="login.html" class="btn-hero-secondary btn-demo-desktop">
+                    <span>Se connecter</span>
+                </a>
+            </div>
+            <div class="hero-stats animate-in">
+                <div class="hero-stat">
+                    <span class="stat-number" data-target="2847">0</span>
+                    <span class="stat-label">Idées financées</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="stat-number" data-target="156k">0</span><span class="stat-suffix"></span>
+                    <span class="stat-label">Investis</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="stat-number" data-target="12400">0</span>
+                    <span class="stat-label">Innovateurs</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual animate-in">
+            <div class="browser-mockup">
+                <div class="browser-header">
+                    <div class="browser-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div class="browser-url">ideon-biz.github.io/fr/dashboard</div>
+                </div>
+                <div class="browser-content">
+                    <div class="mock-dashboard">
+                        <div class="mock-sidebar">
+                            <div class="mock-sidebar-item active"></div>
+                            <div class="mock-sidebar-item"></div>
+                            <div class="mock-sidebar-item"></div>
+                            <div class="mock-sidebar-item"></div>
+                        </div>
+                        <div class="mock-main">
+                            <div class="mock-card card-1">
+                                <div class="mock-card-header">
+                                    <div class="mock-avatar"></div>
+                                    <div class="mock-lines">
+                                        <div class="mock-line w60"></div>
+                                        <div class="mock-line w40"></div>
+                                    </div>
+                                </div>
+                                <div class="mock-chart">
+                                    <svg viewBox="0 0 200 60" class="chart-svg">
+                                        <polyline points="0,50 30,40 60,45 90,20 120,25 150,10 180,15 200,5" 
+                                                  fill="none" stroke="url(#chartGrad)" stroke-width="2.5"/>
+                                        <defs>
+                                            <linearGradient id="chartGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" style="stop-color:#7c3aed"/>
+                                                <stop offset="100%" style="stop-color:#06b6d4"/>
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class="mock-tag">+127% ce mois</div>
+                            </div>
+                            <div class="mock-card card-2">
+                                <div class="mock-card-icon">💡</div>
+                                <div class="mock-line w80"></div>
+                                <div class="mock-line w50"></div>
+                                <div class="mock-progress">
+                                    <div class="mock-progress-bar"></div>
+                                </div>
+                                <div class="mock-tag green">75% financé</div>
+                            </div>
+                            <div class="mock-card card-3">
+                                <div class="mock-card-icon">🚀</div>
+                                <div class="mock-line w70"></div>
+                                <div class="mock-line w40"></div>
+                                <div class="mock-investors">
+                                    <div class="mock-investor-avatar"></div>
+                                    <div class="mock-investor-avatar"></div>
+                                    <div class="mock-investor-avatar"></div>
+                                    <div class="mock-investor-count">+8</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="floating-card float-card-1">
+                <span class="float-icon">🎯</span>
+                <span class="float-text">Nouveau match !</span>
+            </div>
+            <div class="floating-card float-card-2">
+                <span class="float-icon">💰</span>
+                <span class="float-text">+50K€ reçus</span>
+            </div>
+            <div class="floating-card float-card-3">
+                <span class="float-icon">⚡</span>
+                <span class="float-text">Idée validée</span>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Marquee Section -->
+    <section class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span class="marquee-item">Innovation</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">Investissement</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">Disruption</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">Startup</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">Vision</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">Futur</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">Créativité</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">Impact</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">Innovation</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">Investissement</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">Disruption</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">Startup</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">Vision</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">Futur</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">Créativité</span>
+                <span class="marquee-dot">◆</span>
+                <span class="marquee-item">Impact</span>
+                <span class="marquee-dot">◆</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Fonctionnalités</span>
+                <h2 class="section-title">Tout ce dont vous avez besoin<br><span class="gradient-text">pour réussir</span></h2>
+                <p class="section-desc">Une plateforme pensée pour maximiser vos chances de transformer une idée en succès.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card reveal" style="--delay: 0">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>Pitch intelligent</h3>
+                    <p>Notre IA vous aide à structurer et perfectionner votre pitch pour captiver les investisseurs dès la première seconde.</p>
+                    <a href="#" class="feature-link">En savoir plus →</a>
+                </div>
+                <div class="feature-card reveal" style="--delay: 1">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>Réseau mondial</h3>
+                    <p>Accédez à un réseau de +3000 investisseurs vérifiés dans 40 pays. Votre idée n'a pas de frontières.</p>
+                    <a href="#" class="feature-link">En savoir plus →</a>
+                </div>
+                <div class="feature-card reveal" style="--delay: 2">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>Protection IP</h3>
+                    <p>Vos idées sont protégées par un système de NDA automatique et de blockchain avant tout partage.</p>
+                    <a href="#" class="feature-link">En savoir plus →</a>
+                </div>
+                <div class="feature-card reveal" style="--delay: 3">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>Chat sécurisé</h3>
+                    <p>Négociez directement avec les investisseurs via notre messagerie chiffrée de bout en bout.</p>
+                    <a href="#" class="feature-link">En savoir plus →</a>
+                </div>
+                <div class="feature-card reveal" style="--delay: 4">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M18 20V10M12 20V4M6 20v-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>Analytics avancés</h3>
+                    <p>Suivez l'engagement sur votre pitch en temps réel. Qui regarde, combien de temps, et quel intérêt.</p>
+                    <a href="#" class="feature-link">En savoir plus →</a>
+                </div>
+                <div class="feature-card reveal" style="--delay: 5">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>Matching IA</h3>
+                    <p>Notre algorithme trouve les investisseurs les plus pertinents pour votre secteur et votre stade de développement.</p>
+                    <a href="#" class="feature-link">En savoir plus →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="how-section" id="how">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Processus</span>
+                <h2 class="section-title">De l'idée au financement<br><span class="gradient-text">en 3 étapes</span></h2>
+            </div>
+            <div class="steps-container">
+                <div class="step-card reveal" style="--delay: 0">
+                    <div class="step-number">01</div>
+                    <div class="step-visual">
+                        <div class="step-icon-bg">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2a7 7 0 0 1 7 7c0 3-2 5.5-4 7l-1 4H10l-1-4c-2-1.5-4-4-4-7a7 7 0 0 1 7-7z"/>
+                                <path d="M10 20h4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>Partagez votre vision</h3>
+                    <p>Décrivez votre idée en quelques minutes. Notre assistant IA vous guide pour créer un pitch percutant et professionnel.</p>
+                </div>
+                <div class="step-connector reveal">
+                    <svg width="80" height="2" viewBox="0 0 80 2">
+                        <line x1="0" y1="1" x2="80" y2="1" stroke="url(#connectorGrad)" stroke-width="2" stroke-dasharray="6 4"/>
+                        <defs>
+                            <linearGradient id="connectorGrad">
+                                <stop offset="0%" stop-color="#7c3aed"/>
+                                <stop offset="100%" stop-color="#06b6d4"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="step-card reveal" style="--delay: 1">
+                    <div class="step-number">02</div>
+                    <div class="step-visual">
+                        <div class="step-icon-bg">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>Trouvez vos investisseurs</h3>
+                    <p>Notre algorithme identifie les investisseurs idéaux. Recevez des demandes de contact et planifiez vos rendez-vous.</p>
+                </div>
+                <div class="step-connector reveal">
+                    <svg width="80" height="2" viewBox="0 0 80 2">
+                        <line x1="0" y1="1" x2="80" y2="1" stroke="url(#connectorGrad2)" stroke-width="2" stroke-dasharray="6 4"/>
+                        <defs>
+                            <linearGradient id="connectorGrad2">
+                                <stop offset="0%" stop-color="#06b6d4"/>
+                                <stop offset="100%" stop-color="#10b981"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="step-card reveal" style="--delay: 2">
+                    <div class="step-number">03</div>
+                    <div class="step-visual">
+                        <div class="step-icon-bg green">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>Lancez votre projet</h3>
+                    <p>Signez, recevez vos fonds, et accédez à notre écosystème de mentors et experts pour accélérer votre croissance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="big-stat reveal">
+                    <div class="big-stat-number">
+                        <span data-target="156M€" class="counter">0</span><span class="stat-unit"></span>
+                    </div>
+                    <p class="big-stat-label">levés par nos innovateurs depuis le lancement</p>
+                </div>
+                <div class="stats-right">
+                    <div class="stat-item reveal" style="--delay: 0">
+                        <div class="stat-item-number"><span data-target="94" class="counter">0</span>%</div>
+                        <div class="stat-item-label">Taux de satisfaction</div>
+                        <div class="stat-bar"><div class="stat-bar-fill" data-width="94"></div></div>
+                    </div>
+                    <div class="stat-item reveal" style="--delay: 1">
+                        <div class="stat-item-number"><span data-target="72" class="counter">0</span>h</div>
+                        <div class="stat-item-label">Temps moyen pour un premier contact</div>
+                        <div class="stat-bar"><div class="stat-bar-fill" data-width="30"></div></div>
+                    </div>
+                    <div class="stat-item reveal" style="--delay: 2">
+                        <div class="stat-item-number"><span data-target="40" class="counter">0</span>+</div>
+                        <div class="stat-item-label">Pays représentés</div>
+                        <div class="stat-bar"><div class="stat-bar-fill" data-width="70"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Témoignages</span>
+                <h2 class="section-title">Ceux qui ont osé<br><span class="gradient-text">rêver grand</span></h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal" style="--delay: 0">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"En 48h, j'avais 3 investisseurs intéressés par mon projet de mobilité durable. Ideon a changé ma vie."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #7c3aed, #06b6d4)">SL</div>
+                        <div class="author-info">
+                            <div class="author-name">Sophie Laurent</div>
+                            <div class="author-role">Fondatrice, GreenMove</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card featured reveal" style="--delay: 1">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"La plateforme la plus intuitive que j'ai utilisée. Le matching IA est bluffant — chaque investisseur proposé était parfaitement aligné avec notre vision."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #06b6d4, #10b981)">MB</div>
+                        <div class="author-info">
+                            <div class="author-name">Marc Beaumont</div>
+                            <div class="author-role">CEO, NeuroTech Labs</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal" style="--delay: 2">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Nous avons levé 2.5M€ en un mois. Le processus est fluide, sécurisé, et l'équipe Ideon est exceptionnelle."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #f59e0b, #ef4444)">AK</div>
+                        <div class="author-info">
+                            <div class="author-name">Amira Keïta</div>
+                            <div class="author-role">CTO, DataSphere</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-bg">
+            <div class="cta-orb orb-1"></div>
+            <div class="cta-orb orb-2"></div>
+        </div>
+        <div class="container">
+            <div class="cta-content reveal">
+                <h2 class="cta-title">Prêt à transformer<br>votre idée en <span class="gradient-text">succès</span> ?</h2>
+                <p class="cta-desc">Rejoignez +12 000 innovateurs qui ont déjà fait le premier pas vers leur rêve.</p>
+                <div class="cta-actions">
+                    <a href="#" class="btn-hero-primary btn-large">
+                        <span>Commencer maintenant</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                <p class="cta-note">Gratuit pour commencer · Aucune carte requise</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-icon">◆</span>
+                        <span class="logo-text">Ideon</span>
+                    </a>
+                    <p class="footer-desc">La plateforme où les idées rencontrent l'investissement. <br>Construisons le futur ensemble.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+                        <a href="#" class="social-link" aria-label="Instagram">◎</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Produit</h4>
+                    <a href="#">Fonctionnalités</a>
+                    <a href="#">Tarifs</a>
+                    <a href="#">Sécurité</a>
+                    <a href="#">API</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Entreprise</h4>
+                    <a href="#">À propos</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Carrières</a>
+                    <a href="#">Presse</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <a href="#">Centre d'aide</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Statut</a>
+                    <a href="#">Communauté</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ideon. Tous droits réservés.</p>
+                <div class="footer-legal">
+                    <a href="#">Confidentialité</a>
+                    <a href="#">Conditions</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
