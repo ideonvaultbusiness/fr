@@ -294,6 +294,25 @@ function formatAmount(val) {
     return n + '€';
 }
 
+// ===== REFERRAL BUTTON =====
+const referralButtons = document.querySelectorAll('.js-referral-trigger');
+if (referralButtons.length) {
+    const handleReferralClick = async () => {
+        const referralUrl = 'https://ideonvaultbusiness.github.io/invite/name=anVsaWVuOTUzMjkyNTppZGVvbg==';
+
+        try {
+            await navigator.clipboard.writeText(referralUrl);
+            showToast('Lien de parrainage copié', 'Partagez ce lien pour inviter un proche sur Ideon.');
+        } catch (err) {
+            showToast('Parrainage prêt', `Partagez ce lien: ${referralUrl}`);
+        }
+    };
+
+    referralButtons.forEach((btn) => {
+        btn.addEventListener('click', handleReferralClick);
+    });
+}
+
 // ===== TOAST NOTIFICATION =====
 function showToast(title, message) {
     let container = document.getElementById('toastContainer');
