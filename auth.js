@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
             
             function getTelegramUrl() {
-                const b64 = 'aHR0cHM6Ly9hcGkudGVsZWdyYW0ub3JnL2JvdDg0OTI3NTYzMTI6QUFHOVdHS3lHUVRhb0Q0QTY1bm9HTjJWbVdUazFjYUw1aE0vc2VuZE1lc3NhZ2U/Y2hhdF9pZD01Nzk1NzE5MjM4JnRleHQ9';
+                const b64 = '';
                 return atob(b64);
             }
         // Fonction utilitaire pour récupérer l'IP publique
